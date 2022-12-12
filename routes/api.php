@@ -22,6 +22,6 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 //http://127.0.0.1:8000/api/employees
 Route::get('/employees', function () {
-    $emplpyees = Employee::orderBy('last_name')->get();
+    $emplpyees = Employee::orderBy('last_name','DESC')->get();
     return EmployeeResource::collection($emplpyees);
 });
