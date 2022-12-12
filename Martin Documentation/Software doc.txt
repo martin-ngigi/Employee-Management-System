@@ -1,0 +1,68 @@
+Framework - A common structure for developer application so that developers dont have to develop from scretch.
+
+Php uses MVC (Model View Controller) architecture.
+Model - Manages data and business logic
+View - Handles layout and display
+Controller - Routes commands to the model and view parts. Acts as an interface between view and models.
+
+Composer - Is a dependency manager for PhP.
+		   It is similar to NPM in Node.
+		   Can be used to update the project and the framework.
+		   Instances where composer is used: To pdf generator, inject JQuery, JWT tijen generation.
+DIFFERENCE BETWEEN LARAVEL AND (ANGULAR, REACT , ETC)
+-laravel is a aserver-side framewwork while angular etc are client side framewwork
+-You can not make a single-page app directly
+-It can connect with db
+-Angular etc cant connect with db directly
+-Angular etc need api
+-Angular etc need a backend framewwork
+
+Routing - Means mapping specific page with a specific URL.
+
+blade -blade template is a template engine that can convert simple text to php
+       templating feature provided by laravel. ALso provides laravel features such as no need of use of tags.
+       eg:
+            <?php ?> ---> in PhP
+            {{}}     ----> in blade template
+
+Controller - all the logical programming is done here.
+
+Component - a piece of code that can be re-used. Its almost similar to functions only that functions have some limitations
+    eg a Component can be used in header or footer.
+
+Middleware - type of code that can filter out users request. eg login... if user is logged in, he can access the website else he/she cant access the website.
+    Types of Middleware:
+        1. Global Middleware - Applied at a complete website on a single time
+        2. Groupped Middleware -  Applied at specific pages eg 20 pages
+        3. Routed Middleware - Applied ata a single route at a time
+
+DATABASE
+-Check .env file for the database configurations so as to edit accordingly
+- the settings are consumed by congig\database.php
+
+Models
+A model should match with table name. and Should be in singular tense
+eg
+Model       Table
+User        Users
+
+Http Client - allows you to make outgoing HTTP Requests with web other applications through the api
+
+Sessions - used for storing the data on the server side. The data is stored permanently unless deleted
+            - can be used to store username and password.
+
+Flash Session - used for storing the data on the server side. The data is stored tempolarily... i.e. after refresh, the data is lost.
+                - can be used to store confirmation message.
+
+Localization - Putting a language in different languages.
+
+Pagination- showing only chunks/portions of data... ie. when the db has a record containing 1000 rows, we can paginate and show 10 rows per page
+
+Aggregate Query - Are database functions that provide mathematical calculations on the database eg. sum, max, min, average.
+
+Join - fetching data from two tables which are inter-related i.e if both tables have IDs.
+
+Migrations - create table in the php code the it will automatically create a database table that matches the code.
+        Benefit ->  enables version controll when there are different users working on different desktop pcs
+
+Migration defines the table structure and not the table data

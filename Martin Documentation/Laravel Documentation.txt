@@ -1,0 +1,71 @@
+Youtube Tutorial -> https://www.youtube.com/watch?v=9fC5zmvbDwU&list=PL8p2I9GklV47Jszga434vZxOmY74Q1N_K&index=2&ab_channel=CodeStepByStep
+
+BREEZE URL -> https://laravel.com/docs/9.x/starter-kits
+FILAMENT URL -> https://filamentphp.com/docs/2.x/admin/installation
+
+
+Installations:
+1. Install Xamp(once) - will also automatically install php
+2. Install Composer(once)
+3. Install laravel(once)
+4. Install Breeze
+5. Install filament (for beautiful UI)
+
+Check php version:
+	php -v
+Check composer version:
+	composer --version
+Install laravel globally in cmd by running following command in cmd:
+	composer global require laravel/installer
+check laravel version:
+	laravel -v
+
+Create new Laravel project:
+	laravel new Employee-Management-System
+    cd Employee-Management-System
+
+Install Breeze
+    composer require laravel/breeze --dev
+    php artisan breeze:install
+    php artisan migrate
+    npm install
+    npm run dev
+
+Open another terminal and
+Install filament
+    composer require filament/filament:"^2.0"
+    php artisan make:filament-user
+
+start Laravel's local development server using the Laravel's Artisan CLI serve command:
+	php artisan serve
+    http://127.0.0.1:8000/admin/
+
+NB THIS IS NOT WORKING.... USE ARTISAN SERVE INSTEAD.
+or after starting the xamp server, navigate to htdocs xamp and copy the relative path :
+    http://localhost/LARAVEL/Employee-Management-System/public/
+
+DIFFERENCE BETWEEN LARAVEL AND (ANGULAR, REACT , ETC)
+-laravel is a aserver-side framewwork while angular etc are client side framewwork
+-You can not make a single-page app directly
+-It can connect with db
+-Angular etc cant connect with db directly
+-Angular etc need api
+-Angular etc need a backend framewwork
+
+Making Controller run:
+    php artisan make:controller Users
+
+Making a component (its a piece of code that can be reused eg a header):
+    php artisan make:component header
+
+Making MiddleWare(is a piece of code that checks users request. eg at login).. Run:
+    php artisan make:middleware ageCheck
+
+Making models(Should be similar to Table name, but in singular tense)
+    php artisan make:model User
+
+Making Migrations... "employees" is table name
+    php artisan make:migration create_employees
+
+Migrating the migration
+    php artisan migrate
