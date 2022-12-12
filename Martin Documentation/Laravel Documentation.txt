@@ -54,6 +54,14 @@ DIFFERENCE BETWEEN LARAVEL AND (ANGULAR, REACT , ETC)
 -Angular etc need api
 -Angular etc need a backend framewwork
 
+
+Making models(Should be similar to Table name, but in singular tense) ... "-m" stands for the migration
+    php artisan make:model Country -m
+    php artisan make:model State -m
+    php artisan make:model City -m
+    php artisan make:model Department -m
+    php artisan make:model Employee -m
+
 Making Controller run:
     php artisan make:controller Users
 
@@ -62,9 +70,6 @@ Making a component (its a piece of code that can be reused eg a header):
 
 Making MiddleWare(is a piece of code that checks users request. eg at login).. Run:
     php artisan make:middleware ageCheck
-
-Making models(Should be similar to Table name, but in singular tense)
-    php artisan make:model User
 
 Making Migrations... "employees" is table name
     php artisan make:migration create_employees
