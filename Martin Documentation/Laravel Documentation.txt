@@ -5,6 +5,7 @@ Tutorial url -> https://www.youtube.com/watch?v=gpjFP6RJMXA&t=152s&ab_channel=La
 BREEZE URL -> https://laravel.com/docs/9.x/starter-kits
 FILAMENT URL -> https://filamentphp.com/docs/2.x/admin/installation
 
+Relationships start with -> Country -> State -> City ->
 
 Installations:
 1. Install Xamp(once) - will also automatically install php
@@ -58,6 +59,10 @@ Making models(Should be similar to Table name, but in singular tense) ... "-m" s
 Createing filament resources... Url : https://filamentphp.com/docs/2.x/admin/resources/getting-started
 To create a resource for the App\Models\Country model:
     php artisan make:filament-resource Country
+    php artisan make:filament-resource State
+    php artisan make:filament-resource City
+    php artisan make:filament-resource Department
+    php artisan make:filament-resource Employee
 
 
 
