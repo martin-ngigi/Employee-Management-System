@@ -23,7 +23,7 @@ class StateResource extends Resource
     protected static ?string $model = State::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-collection';
-
+    protected static ?string $navigationGroup = 'System Management';
     public static function form(Form $form): Form
     {
         return $form
