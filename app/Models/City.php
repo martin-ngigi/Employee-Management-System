@@ -13,7 +13,7 @@ class City extends Model
 
     /**
      * relationship between city and state
-     * city belongs to the state
+     *  city belongs to the state
      * type "fun" and let the autocompletion do its thing :-)
      */
     public function state()
