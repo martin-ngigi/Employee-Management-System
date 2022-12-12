@@ -4,7 +4,9 @@ namespace App\Filament\Resources;
 
 use App\Filament\Resources\EmployeeResource\Pages;
 use App\Filament\Resources\EmployeeResource\RelationManagers;
+use App\Models\Country;
 use App\Models\Employee;
+use App\Models\State;
 use Filament\Forms;
 use Filament\Resources\Form;
 use Filament\Resources\Resource;
@@ -18,9 +20,7 @@ use Filament\Tables\Columns\TextColumn;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\DatePicker;
 use Filament\Tables\Filters\SelectFilter;
-
-
-
+use PHPUnit\Framework\Constraint\Count;
 
 class EmployeeResource extends Resource
 {
@@ -30,18 +30,33 @@ class EmployeeResource extends Resource
 
     public static function form(Form $form): Form
     {
+        /**
+         * When one selects a country, display only the states present in that country.
+         */
+
         return $form
             ->schema([
                 //https://filamentphp.com/docs/2.x/forms/layout#card
                 Card::make()
-                ->schema([
-                     // ...
-                    Select::make('country_id',)
-                         ->relationship('country', 'name') -> required(),
-                    Select::make('state_id',)
-                         ->relationship('state', 'name') -> required(),
-                    Select::make('city_id',)
-                         ->relationship('city', 'name') -> required(),
+                    ->schema([
+                        // When one selects a country, display only the states present in that country.
+                        Select::make('country_id')
+                            ->label('Country')
+                            ->options(Country::all()->pluck('name', 'id')->toArray())
+                            ->reactive()
+                            ->afterStateUpdated(fn (callable $set)=> $set('state_id', null)),
+                        // When one selects a state, display only the cities present in that country.
+                        Select::make('state_id')
+                            ->label('State')
+                            ->options(function (callable $get) {
+                                $country = Country::find($get('country_id'));
+                                if(!$country){
+                                    //if there is no country
+                                    return State::all()->pluck('name', 'id');
+                                }
+                                return $country->states->pluck('name', 'id');
+                        })
+                        ->reactive(),
                     Select::make('department_id',)
                          ->relationship('department', 'name') -> required(),
                     TextInput::make('first_name') -> required(),
