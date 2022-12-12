@@ -70,9 +70,9 @@ Creating resource manager ie on clicking countries, show all the employees prese
     //in country
     php artisan make:filament-relation-manager CountryResource employees first_name
     php artisan make:filament-relation-manager CountryResource states name
-
-
-
+    //in states
+    php artisan make:filament-relation-manager StateResource employees first_name
+    php artisan make:filament-relation-manager StateResource cities name
 
 
 
