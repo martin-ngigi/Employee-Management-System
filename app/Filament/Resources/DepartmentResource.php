@@ -30,7 +30,10 @@ class DepartmentResource extends Resource
         return $form
             ->schema([
                 //https://filamentphp.com/docs/2.x/forms/layout#card
-                TextInput::make('name')
+                Card::make()
+                ->schema([
+                    TextInput::make('name')
+                ])
 
             ]);
     }
