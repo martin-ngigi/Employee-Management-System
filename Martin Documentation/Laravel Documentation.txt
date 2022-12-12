@@ -1,4 +1,6 @@
-Youtube Tutorial -> https://www.youtube.com/watch?v=9fC5zmvbDwU&list=PL8p2I9GklV47Jszga434vZxOmY74Q1N_K&index=2&ab_channel=CodeStepByStep
+Install laravel Youtube Tutorial -> https://www.youtube.com/watch?v=9fC5zmvbDwU&list=PL8p2I9GklV47Jszga434vZxOmY74Q1N_K&index=2&ab_channel=CodeStepByStep
+Source code url -> https://github.com/laraveller/filament-employees
+Tutorial url -> https://www.youtube.com/watch?v=gpjFP6RJMXA&t=152s&ab_channel=Laraveller
 
 BREEZE URL -> https://laravel.com/docs/9.x/starter-kits
 FILAMENT URL -> https://filamentphp.com/docs/2.x/admin/installation
