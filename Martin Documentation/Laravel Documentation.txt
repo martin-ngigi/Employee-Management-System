@@ -85,6 +85,23 @@ Creating Widgtes i.e. to shouw count... url https://filamentphp.com/docs/2.x/adm
     (Optional) Resource (e.g. `BlogPostResource`):
     > EmployeeResource
 
+publis configuration:
+    php artisan vendor:publish --tag=filament-config
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
