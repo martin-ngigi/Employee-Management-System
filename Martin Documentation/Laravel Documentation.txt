@@ -12,6 +12,7 @@ Installations:
 3. Install laravel(once)
 4. Install Breeze
 5. Install filament (for beautiful UI)
+6. Install Tabine Ai autocompletion extension
 
 Check php version:
 	php -v
@@ -45,14 +46,6 @@ start Laravel's local development server using the Laravel's Artisan CLI serve c
 NB THIS IS NOT WORKING.... USE ARTISAN SERVE INSTEAD.
 or after starting the xamp server, navigate to htdocs xamp and copy the relative path :
     http://localhost/LARAVEL/Employee-Management-System/public/
-
-DIFFERENCE BETWEEN LARAVEL AND (ANGULAR, REACT , ETC)
--laravel is a aserver-side framewwork while angular etc are client side framewwork
--You can not make a single-page app directly
--It can connect with db
--Angular etc cant connect with db directly
--Angular etc need api
--Angular etc need a backend framewwork
 
 
 Making models(Should be similar to Table name, but in singular tense) ... "-m" stands for the migration

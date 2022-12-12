@@ -9,6 +9,7 @@ Composer - Is a dependency manager for PhP.
 		   It is similar to NPM in Node.
 		   Can be used to update the project and the framework.
 		   Instances where composer is used: To pdf generator, inject JQuery, JWT tijen generation.
+
 DIFFERENCE BETWEEN LARAVEL AND (ANGULAR, REACT , ETC)
 -laravel is a aserver-side framewwork while angular etc are client side framewwork
 -You can not make a single-page app directly
@@ -16,6 +17,8 @@ DIFFERENCE BETWEEN LARAVEL AND (ANGULAR, REACT , ETC)
 -Angular etc cant connect with db directly
 -Angular etc need api
 -Angular etc need a backend framewwork
+
+Install Tabine AI Autocompletion extension.
 
 Routing - Means mapping specific page with a specific URL.
 
