@@ -13,7 +13,7 @@ class Employee extends Model
         'first_name',
         'last_name',
         'address',
-        'city_id',
+        'state_id',
         'city_id',
         'country_id',
         'department_id',
