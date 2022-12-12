@@ -66,8 +66,8 @@ To create a resource for the App\Models\Country model:
 
     php artisan make:filament-resource User
 
-
-
+Creating resource manager ie on clicking countries, show all the employees present in that country.
+    php artisan make:filament-relation-manager CountryResource employees first_name
 
 
 
