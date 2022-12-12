@@ -46,7 +46,12 @@ class LoginRequest extends FormRequest
         $this->ensureIsNotRateLimited();
 
         if (! Auth::attempt($this->only('email', 'password'), $this->boolean('remember'))) {
-            RateLimiter::hit($this->throttleKey());
+            /**
+             * delay the failed attempt for a duration of 300 seconds
+             * This is for the normal user and not the admin
+             * i.e http://127.0.0.1:8000/login
+             */
+            RateLimiter::hit($this->throttleKey(), 300);
 
             throw ValidationException::withMessages([
                 'email' => trans('auth.failed'),
@@ -65,7 +70,12 @@ class LoginRequest extends FormRequest
      */
     public function ensureIsNotRateLimited()
     {
-        if (! RateLimiter::tooManyAttempts($this->throttleKey(), 5)) {
+        /**
+         * Allow only 3 attemts during login
+         * This is for the normal user and not the admin
+         * i.e http://127.0.0.1:8000/login
+         */
+        if (! RateLimiter::tooManyAttempts($this->throttleKey(), 3)) {
             return;
         }
 

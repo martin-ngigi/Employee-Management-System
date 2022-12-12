@@ -31,7 +31,7 @@ Install Breeze
     php artisan breeze:install
     php artisan migrate
     npm install
-    npm run dev
+    npm run dev //NB STOP THIS ctrl+C ----- If this npm and artisan serve are both running, they will cause an error in the loading page... so just let the artisan serve run alone... :-)
 
 Open another terminal and
 Install filament
