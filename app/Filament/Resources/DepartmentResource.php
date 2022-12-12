@@ -24,6 +24,10 @@ class DepartmentResource extends Resource
     protected static ?string $model = Department::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-academic-cap';
+
+    // numbering purpose ie position
+    protected static ?int $navigationSort = 3;
+
     protected static ?string $navigationGroup = 'System Management';
     public static function form(Form $form): Form
     {
