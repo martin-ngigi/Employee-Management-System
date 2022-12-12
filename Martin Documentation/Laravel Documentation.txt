@@ -55,6 +55,25 @@ Making models(Should be similar to Table name, but in singular tense) ... "-m" s
     php artisan make:model Department -m
     php artisan make:model Employee -m
 
+Createing filament resources... Url : https://filamentphp.com/docs/2.x/admin/resources/getting-started
+To create a resource for the App\Models\Country model:
+    php artisan make:filament-resource Country
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 Making Controller run:
     php artisan make:controller Users
 

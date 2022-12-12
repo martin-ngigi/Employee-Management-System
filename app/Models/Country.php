@@ -9,7 +9,7 @@ class Country extends Model
 {
     use HasFactory;
 
-    protected $filable = ['country_code', 'name'];
+    protected $fillable = ['country_code', 'name'];
 
     /**
      * Summary of employees

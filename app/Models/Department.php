@@ -9,7 +9,7 @@ class Department extends Model
 {
     use HasFactory;
 
-    protected $filable = ['name'];
+    protected $fillable = ['name'];
 
      /**
      * Summary of employees

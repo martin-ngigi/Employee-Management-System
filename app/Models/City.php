@@ -9,7 +9,7 @@ class City extends Model
 {
     use HasFactory;
 
-    protected $filable = ['state_id', 'name'];
+    protected $fillable = ['state_id', 'name'];
 
     /**
      * relationship between city and state
