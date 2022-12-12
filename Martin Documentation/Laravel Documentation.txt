@@ -78,7 +78,12 @@ Creating resource manager ie on clicking countries, show all the employees prese
     //in department
     php artisan make:filament-relation-manager DepartmentResource employees first_name
 
+Creating Widgtes i.e. to shouw count... url https://filamentphp.com/docs/2.x/admin/dashboard/stats
+    php artisan make:filament-widget EmployeeStatsOverview --stats-overview
 
+    ....enter resource
+    (Optional) Resource (e.g. `BlogPostResource`):
+    > EmployeeResource
 
 
 
