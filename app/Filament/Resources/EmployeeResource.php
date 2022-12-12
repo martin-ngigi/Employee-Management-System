@@ -4,6 +4,7 @@ namespace App\Filament\Resources;
 
 use App\Filament\Resources\EmployeeResource\Pages;
 use App\Filament\Resources\EmployeeResource\RelationManagers;
+use App\Models\City;
 use App\Models\Country;
 use App\Models\Employee;
 use App\Models\State;
@@ -45,6 +46,7 @@ class EmployeeResource extends Resource
                             ->options(Country::all()->pluck('name', 'id')->toArray())
                             ->reactive()
                             ->afterStateUpdated(fn (callable $set)=> $set('state_id', null)),
+
                         // When one selects a state, display only the cities present in that country.
                         Select::make('state_id')
                             ->label('State')
@@ -56,15 +58,32 @@ class EmployeeResource extends Resource
                                 }
                                 return $country->states->pluck('name', 'id');
                         })
-                        ->reactive(),
-                    Select::make('department_id',)
-                         ->relationship('department', 'name') -> required(),
-                    TextInput::make('first_name') -> required(),
-                    TextInput::make('last_name') -> required(),
-                    TextInput::make('address') -> required(),
-                    TextInput::make('zip_code') -> required(),
-                    DatePicker::make('birth_date') -> required(),
-                    DatePicker::make('date_hired') -> required(),
+                        ->reactive()
+                        ->afterStateUpdated(fn (callable $set)=> $set('city_id', null)),
+
+                        // When one selects a city, display only the departments present in that country.
+                        Select::make('city_id')
+                            ->label('City')
+                            ->options(function (callable $get) {
+                                $state = State::find($get('state_id'));
+                                if(!$state){
+                                    //if there is no state
+                                    return City::all()->pluck('name', 'id');
+                                }
+                                return $state->cities->pluck('name', 'id');
+                        })
+                        ->reactive()
+                        ->afterStateUpdated(fn (callable $set)=> $set('city_id', null)),
+
+                        Select::make('department_id',)
+                            ->relationship('department', 'name') -> required(),
+
+                        TextInput::make('first_name') -> required(),
+                        TextInput::make('last_name') -> required(),
+                        TextInput::make('address') -> required(),
+                        TextInput::make('zip_code') -> required(),
+                        DatePicker::make('birth_date') -> required(),
+                        DatePicker::make('date_hired') -> required(),
                  ])
 
             ]);

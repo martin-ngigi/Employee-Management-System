@@ -27,4 +27,11 @@ class State extends Model
     public function country(){
         return $this->belongsTo(Country::class);
     }
+
+      /**
+     * Relationship ->state has many cities
+     */
+    public function cities(){
+        return $this->hasMany(City::class);
+    }
 }
